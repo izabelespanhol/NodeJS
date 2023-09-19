@@ -1,0 +1,24 @@
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'izabel.espanhol16@gmail.com',
+    pass: 'vhqh pjfl nytl jiow'
+  }
+});
+
+var mailOptions = {
+  from: 'izabel.espanhol16@gmail.com',
+  to: 'izabel.espanhol16@gmail.com',
+  subject: 'Sending Email using Node.js',
+  text: 'Isso não é fácil!'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+}); 
